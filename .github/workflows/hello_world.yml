@@ -11,34 +11,29 @@ on:
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Pessoa a ser cumprimentada'
-        required: true
-        default: 'Henrique Matos'
-      location:
-        description: 'Localização da pessoa no universo'
-        required: false
-        default: 'Planeta Terra'
+#   workflow_dispatch:
+#     inputs:
+#       name:
+#         description: 'Pessoa a ser cumprimentada'
+#         required: true
+#         default: 'Henrique Matos'
+#       location:
+#         description: 'Localização da pessoa no universo'
+#         required: false
+#         default: 'Planeta Terra'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  job1:
+    name: Primeiro Job
     runs-on: ubuntu-latest
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      - name: Step 1
+        run: env | sort
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, ${{ github.event.inputs.name }}
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: echo Hello from ${{ github.event.inputs.location }}
+  job2:
+    name: Segundo Job
+    runs-on: windows-latest
+    steps:
+      - name: Step 1
+        run: "Get-ChildItem Env: | Sort-Object Name"
