@@ -34,6 +34,8 @@ jobs:
   job2:
     name: Segundo Job
     runs-on: windows-latest
+    needs: job1
+    
     steps:
       - name: Step 1
         run: "Get-ChildItem Env: | Sort-Object Name"
