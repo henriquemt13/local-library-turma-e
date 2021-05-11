@@ -1,0 +1,26 @@
+name: Exercíco 1
+on:
+  push:
+    branches: [ main ]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ultimo Step
+        run: echo Primeiro Job :)
+  job2:
+    runs-on: windows-latest
+    steps:
+      - name: Ultimo Step
+        run: Segundo Job
+  job3:
+    runs-on: macos-latest
+    steps:
+      - name: Ultimo Step
+        run: echo Terceiro Job
+  job4:
+    runs-on: ubuntu-latest
+    needs: [job1, job2, job3]
+    steps:
+      - name: Ultimo Step
+        run: date
