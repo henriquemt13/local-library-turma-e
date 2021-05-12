@@ -6,7 +6,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      -  run: echo 'Primeiro Job :)'
+      - run: echo 'Primeiro Job :)'
   job2:
     runs-on: windows-latest
     steps:
