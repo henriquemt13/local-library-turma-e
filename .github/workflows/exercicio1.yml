@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Step1'
-        run: echo Primeiro Job :)
+        run: echo 'Primeiro Job :)'
   job2:
     runs-on: windows-latest
     steps:
