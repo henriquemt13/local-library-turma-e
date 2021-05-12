@@ -6,21 +6,17 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Step1'
-        run: echo 'Primeiro Job :)'
+      -  run: echo 'Primeiro Job :)'
   job2:
     runs-on: windows-latest
     steps:
-      - name: 'Step2'
-        run: Segundo Job
+      - run: echo Segundo Job
   job3:
     runs-on: macos-latest
     steps:
-      - name: 'Step3'
-        run: echo Terceiro Job
+      - run: echo Terceiro Job
   job4:
     runs-on: ubuntu-latest
     needs: [job1, job2, job3]
     steps:
-      - name: 'Ultimo Step'
-        run: date
+      - run: date
