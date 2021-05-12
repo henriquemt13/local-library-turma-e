@@ -6,11 +6,13 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
-
+env:
+  WORKFLOW_VAR: 'my workflow var'
 jobs:
   build:
     env:
       NODE_VERSION: 12
+      JOB_VAR: 'my hob var'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.4
@@ -22,10 +24,10 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - name: Print step env var
+      env:
+        STEP_VAR: 'my step var'
+      run: echo $STEP_VAR
+    - run: echo $JOB_VAR
+    - run: echo $WORKFLOW_VAR
     
-  deploy:
-    runs-on: ubuntu-latest
-    env:
-      NODE_VERSION: 14
-    steps:
-      - run: echo $NODE_VERSION
