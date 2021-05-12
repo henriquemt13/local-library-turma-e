@@ -17,7 +17,7 @@ jobs:
       PACKAGE_VAR: package
     steps:
       - name: Upload a Build Artifact
-      - uses: actions/upload-artifact@v2.2.3
+        uses: actions/upload-artifact@v2.2.3
         with:
           name: ${{env.PACKAGE_VAR}}
           path: .
