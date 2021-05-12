@@ -13,10 +13,6 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
         
-  build2:
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.3
         with:
