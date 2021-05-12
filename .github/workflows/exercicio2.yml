@@ -1,0 +1,25 @@
+name: Exercicio 2
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+  build2:
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE_VARNAME: pacote
+    steps:
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          name: $PACKAGE_VARNAME
+          path: .
+          if-no-files-found: error
+        
