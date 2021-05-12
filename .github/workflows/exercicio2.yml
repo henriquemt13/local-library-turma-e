@@ -14,12 +14,12 @@ jobs:
   build2:
     runs-on: ubuntu-latest
     env:
-      PACKAGE_VARNAME: package
+      PACKAGE_VAR: package
     steps:
       - name: Upload a Build Artifact
       - uses: actions/upload-artifact@v2.2.3
         with:
-          name: $PACKAGE_VARNAME
+          name: $PACKAGE_VAR
           path: .
           if-no-files-found: error
         
