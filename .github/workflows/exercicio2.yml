@@ -17,7 +17,7 @@ jobs:
       PACKAGE_VARNAME: package
     steps:
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2.2.3
+      - uses: actions/upload-artifact@v2.2.3
         with:
           name: $PACKAGE_VARNAME
           path: .
