@@ -19,7 +19,7 @@ jobs:
       - name: Upload a Build Artifact
       - uses: actions/upload-artifact@v2.2.3
         with:
-          name: $PACKAGE_VAR
+          name: ${{PACKAGE_VAR}}
           path: .
           if-no-files-found: error
         
