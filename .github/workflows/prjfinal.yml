@@ -41,7 +41,7 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: dev
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_CSS: true
           VALIDATE_MARKDOWN: true
@@ -78,7 +78,7 @@ jobs:
           heroku config:set MONGODB_URI=${{ env.DB_HOM_URI }}" npm run devstart"
       
       - name: Push code to Heroku
-        run: git push heroku main
+        run: git push heroku dev
         
   deploy-prd:
     runs-on: ubuntu-latest
@@ -111,4 +111,4 @@ jobs:
           heroku config:set MONGODB_URI=${{ env.DB_PRD_URI }}" npm run start"
       
       - name: Push code to Heroku
-        run: git push heroku main
+        run: git push heroku dev
