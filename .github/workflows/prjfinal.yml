@@ -74,11 +74,13 @@ jobs:
       
       - name: Set env variables
         run: |
-          heroku config:set NODE_ENV=${{ env.NODE_ENV }}
           heroku config:set MONGODB_URI=${{ env.DB_HOM_URI }}" npm run devstart"
       
+      - name: Show Refs
+        run: git show-ref
+        
       - name: Push code to Heroku
-        run: git push heroku homolog
+        run: git push heroku dev
         
   deploy-prd:
     runs-on: ubuntu-latest
@@ -107,8 +109,7 @@ jobs:
       
       - name: Set env variables
         run: |
-          heroku config:set NODE_ENV=${{ env.NODE_ENV }}
           heroku config:set MONGODB_URI=${{ env.DB_PRD_URI }}" npm run start"
       
       - name: Push code to Heroku
-        run: git push heroku production
+        run: git push heroku dev
