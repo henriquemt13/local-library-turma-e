@@ -81,7 +81,7 @@ jobs:
         run: git show-ref
         
       - name: Push code to Heroku
-        run: git push heroku merge
+        run: git push heroku dev
         
   deploy-prd:
     runs-on: ubuntu-latest
@@ -114,4 +114,4 @@ jobs:
           heroku config:set MONGODB_URI=${{ env.DB_PRD_URI }}" npm run start"
       
       - name: Push code to Heroku
-        run: git push heroku merge
+        run: git push heroku dev
